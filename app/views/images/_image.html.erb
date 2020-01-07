@@ -1,4 +1,10 @@
-<%= image.description %> 
-<%= link_to 'Edit', edit_image_path(image) %> 
-<%= link_to 'Delete', image, method: :delete, data: { confirm: 'sure?'} %>
-<br>
+<div  class="col">
+  <figure class="figure">
+    <img src="https://www.kedge.nu/wp-content/uploads/2018/02/placeholder-300x225.png" class="figure-img img-fluid rounded">
+    <figcaption class="figure-caption">
+      <%= image.description %>
+      <%= link_to 'Edit', edit_image_path(image) %> 
+      <%= link_to 'Delete', image, method: :delete, data: { confirm: 'sure?'} %>
+    </figcaption>
+  </figure>
+</div>
