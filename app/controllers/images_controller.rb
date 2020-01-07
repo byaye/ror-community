@@ -15,7 +15,11 @@ class ImagesController < ApplicationController
     @image = Image.new image_params
     @image.save
 
-    redirect_to @image
+    if @image.save
+      return redirect_to images_path
+    end
+
+    render :new
   end
 
   def show
