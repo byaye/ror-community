@@ -37,7 +37,7 @@ class ImagesController < ApplicationController
   private
 
   def image_params
-    params.require(:image).permit(:description) #user can send a description
+    params.require(:image).permit :description, :picture #user can send a description
   end
 
   def set_image
