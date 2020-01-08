@@ -3,7 +3,7 @@ class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :edit, :update, :destroy]
 
   def index
-    @images = Image.all
+    @images = Image.where user_id: current_user.id
   end
   
   def new
@@ -12,7 +12,7 @@ class ImagesController < ApplicationController
 
   def create
     #render plain: params[:image].inspect
-    @image = Image.new image_params
+    @image = current_user.images.new image_params
     @image.save
 
     if @image.save
