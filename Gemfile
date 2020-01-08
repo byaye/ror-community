@@ -6,6 +6,8 @@ ruby '2.6.3'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'bootstrap', '~> 4.4.1alpha6'
+
+gem 'devise', git: 'git://github.com/plataformatec/devise.git'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 # Use postgresql as the database for Active Record
