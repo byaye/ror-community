@@ -1,0 +1,8 @@
+en:
+  images:
+    new:
+      form:
+        error: 'There is an error: %{model}'
+    image:
+      edit_link: 'Edit'
+      delete_link: 'Delete'

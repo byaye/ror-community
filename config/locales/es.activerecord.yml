@@ -1,5 +1,11 @@
 es:
   activerecord:
+    errors:
+      models:
+        image:
+          attributes:
+            description:
+              blank: "No puede estar vacio"
     attributes:
       image:
         description: 'Descripción'

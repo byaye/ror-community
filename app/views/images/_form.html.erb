@@ -1,20 +1,11 @@
-<%- if @image.errors.any? %>
-  <div class="alert alert-danger">
-    <h4 class="alert-heading">Oh!</h4>
-    <p>There is an error</p>
-  </div>
-<% end %>
-
 <div class="form-group">
-  <%= form_for @image do |f| %>
+  <%= form_for @image, builder: CustomFormBuilder do |f| %>
+    <%= f.form_error %> 
+
     <%= f.label :description %><br>
     <%= f.text_field :description, class: 'form-control' %>
 
-    <%- if @image.errors[:description].any? %>
-      <span class="badge badge-pill badge-danger"> 
-        <%= @image.errors[:description].first %>
-      </span>
-    <% end%>
+    <%= f.field_error :description %> 
 
     <br>
     <%= f.label :picture %><br>
