@@ -1,24 +1,31 @@
-# README
+# RoR Community
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I did this simple project to learn Ruby on Rails
 
-Things you may want to cover:
+What I did:
 
-* Ruby version
+* Simple project like Instagram
 
-* System dependencies
+* User Authentication (Login, Sign in, Sign up)
 
-* Configuration
+* Upload images
 
-* Database creation
+* Storage data on a Postgres DB
 
-* Database initialization
+What I learned:
 
-* How to run the test suite
+* How to install RoR
 
-* Services (job queues, cache servers, search engines, etc.)
+* How to create controller from Rails generators
 
-* Deployment instructions
+* How to create migrations files
 
-* ...
+* How to create routes
+
+* How to create views
+
+* How to integrate Devise gem for User Authentication
+
+* How to integrate Carrierwave and Mini_magick for upload images
+
+* How to add Bootstrap for styling
