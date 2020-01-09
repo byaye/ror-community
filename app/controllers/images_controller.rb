@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-
+  # Standard CRUD actions: index, show, new, edit, create, update and destroy
   before_action :set_image, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -12,8 +12,7 @@ class ImagesController < ApplicationController
 
   def create
     #render plain: params[:image].inspect
-    @image = current_user.images.new image_params
-    @image.save
+    @image = current_user.images.new image_params # Instance variable (prefixed with @) to hold a reference to the article object. We do this because Rails will pass all instance variables to the view.
 
     if @image.save
       return redirect_to images_path

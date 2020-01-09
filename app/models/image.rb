@@ -3,5 +3,5 @@ class Image < ApplicationRecord
 
   validates :description, presence: true
 
-  belogs_to :user
+  belongs_to :user
 end

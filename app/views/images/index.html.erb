@@ -4,6 +4,9 @@
 WO partial -->
 
 <div  class="container">
+  <%= link_to 'Home', controller: 'home' %>
+  <br>
+  <%= link_to 'New', new_image_path %>
   <div class="row">
     <%= render @images %>
   </div>
