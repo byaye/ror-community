@@ -1,8 +1,9 @@
 <% if user_signed_in? %>
   <h1>Welcome <%= current_user.name %> </h1>
-  <%= image_tag @avatar.thumb.url, class: 'figure-img rounded' %>
+  <%= image_tag current_user.avatar.thumb.url, class: 'figure-img rounded' %>
+  <%= link_to 'My Images', controller: 'images' %>
 <% else %>
   <h1>RoR Community</h1>
 <% end %>
-<%= link_to 'My Images', controller: 'images' %>
+
 
