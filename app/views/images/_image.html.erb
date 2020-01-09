@@ -1,12 +1,14 @@
 <div  class="col">
   <figure class="figure">
     <!-- <img src="https://www.kedge.nu/wp-content/uploads/2018/02/placeholder-300x225.png" class="figure-img img-fluid rounded"> -->
-    <%= image_tag image.picture.thumb.url, class: 'figure-img img-fluid rounded' %>
+    <%= image_tag image.picture.thumb.url, class: 'figure-img rounded' %>
     <figcaption class="figure-caption">
       <%= image.description %>
-      <%= link_to 'Show', image_path(image) %>
-      <%= link_to t(".edit_link"), edit_image_path(image) %> 
-      <%= link_to t(".delete_link"), image, method: :delete, data: { confirm: 'sure?'} %>
+      <div  class="col">
+        <%= link_to 'Show', image_path(image), class:"btn btn-primary btn-sm" %>
+        <%= link_to t(".edit_link"), edit_image_path(image), class:"btn btn-primary btn-sm" %> 
+        <%= link_to t(".delete_link"), image, method: :delete, data: { confirm: 'sure?'}, class:"btn btn-primary btn-sm" %>
+      </div>
     </figcaption>
   </figure>
 </div>
