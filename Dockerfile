@@ -1,14 +1,20 @@
-FROM ruby:2.6.3
+FROM ruby:2.6.3-stretch
+RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 
-COPY . /application
-WORKDIR /application
-ENV RAILS_ENV production
+RUN gem install bundler --version 2.1.4 --force
 
-RUN gem install bundler:2.1.4
+RUN mkdir /ror-community
+WORKDIR /ror-community
+COPY Gemfile /ror-community/Gemfile
+COPY Gemfile.lock /ror-community/Gemfile.lock
+RUN bundle install
+COPY . /ror-community
 
-RUN bundle install --deployment --without development test
+# Add a script to be executed every time the container starts.
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
+EXPOSE 3000
 
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
-    && apt install -y nodejs && apt install -y yarn
-
-ENTRYPOINT ./entrypoint.sh
+# Start the main process.
+CMD ["rails", "server", "-b", "0.0.0.0"]

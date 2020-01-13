@@ -6,6 +6,7 @@ ruby '2.6.3'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'bootstrap', '~> 4.4.1alpha6'
+gem 'rake', '~> 13.0.1'
 
 gem 'devise', git: 'git://github.com/plataformatec/devise.git'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
